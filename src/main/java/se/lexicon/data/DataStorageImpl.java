@@ -87,6 +87,8 @@ public class DataStorageImpl implements DataStorage {
 
     }
 
+    //NOT DONE YET. NEED SIMON
+
     @Override
     public List<Person> findAndSort(Comparator<Person> comparator){
         List<Person> peopleFound = new ArrayList<>();

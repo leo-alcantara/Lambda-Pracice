@@ -125,7 +125,8 @@ public class Exercises {
     public static void exercise9(String message){
         System.out.println(message);
         //Write your code here
-
+        Predicate<Person> firstNameLast = person -> person.getLastName().contains(person.getFirstName());
+        Consumer<Person> printUlf = System.out::println;
         System.out.println("----------------------");
     }
 
@@ -134,6 +135,8 @@ public class Exercises {
      */
     public static void exercise10(String message){
         System.out.println(message);
+        //Predicate<Person> findPalindrome = person -> person.getFirstName().equals(person.getFirstName().)
+        Consumer<Person> printPalindrome = person -> System.out.println(person.getFirstName()+person.getLastName());
         //Write your code here
 
         System.out.println("----------------------");
