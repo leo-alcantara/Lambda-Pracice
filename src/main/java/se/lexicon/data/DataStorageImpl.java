@@ -108,6 +108,6 @@ public class DataStorageImpl implements DataStorage {
             }
         }
 
-       return null;
+       return peopleFound;
     }
 }

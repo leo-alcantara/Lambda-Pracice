@@ -2,6 +2,16 @@ package se.lexicon;
 
 import se.lexicon.data.DataStorage;
 
+import se.lexicon.model.Gender;
+import se.lexicon.model.Person;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
 public class Exercises {
 
     private final static DataStorage storage = DataStorage.INSTANCE;
@@ -12,6 +22,7 @@ public class Exercises {
     public static void exercise1(String message){
         System.out.println(message);
         //Write your code here
+        Predicate<Person> findErik = person -> person.getFirstName().equals("Erik");
 
         System.out.println("----------------------");
     }
@@ -22,6 +33,7 @@ public class Exercises {
     public static void exercise2(String message){
         System.out.println(message);
         //Write your code here
+        Predicate<Person> findFemales = person -> person.getGender().equals(Gender.FEMALE);
 
         System.out.println("----------------------");
     }
@@ -32,6 +44,7 @@ public class Exercises {
     public static void exercise3(String message){
         System.out.println(message);
         //Write your code here
+        Predicate<Person> bornAfter = person -> person.getBirthDate().isEqual(LocalDate.parse("2000-01-01")) || person.getBirthDate().isAfter(LocalDate.parse("2000-01-01"));
 
         System.out.println("----------------------");
     }
@@ -42,6 +55,8 @@ public class Exercises {
     public static void exercise4(String message){
         System.out.println(message);
         //Write your code here
+
+        Predicate<Person> findId = person -> person.getId()==123;
 
         System.out.println("----------------------");
 
@@ -54,6 +69,15 @@ public class Exercises {
     public static void exercise5(String message){
         System.out.println(message);
         //Write your code here
+        Predicate<Person> findPersonById = person -> {
+            if(person.getId()==456){
+                List<Person> foundPerson = new ArrayList<>();
+              foundPerson.add(person);
+                }
+            return true;
+        };
+
+        Function<Person, String> personToString = Person::toString;
 
         System.out.println("----------------------");
     }
@@ -64,6 +88,9 @@ public class Exercises {
     public static void exercise6(String message){
         System.out.println(message);
         //Write your code here
+        Predicate<Person> findMaleE = person -> person.getGender().equals(Gender.MALE) && person.getFirstName().startsWith("E");
+
+        Function<Person, String> personToString = Person::toString;
 
         System.out.println("----------------------");
     }
@@ -75,7 +102,8 @@ public class Exercises {
     public static void exercise7(String message){
         System.out.println(message);
         //Write your code here
-
+        Predicate<Person> findAgeUnder10 = person -> person.getBirthDate().isAfter(LocalDate.parse("2011-08-01"));
+        Function<Person, String> personToString = Person::toString;
         System.out.println("----------------------");
     }
 
@@ -85,6 +113,8 @@ public class Exercises {
     public static void exercise8(String message){
         System.out.println(message);
         //Write your code here
+        Predicate<Person> findUlf = person -> person.getFirstName().equals("Ulf");
+        Consumer<Person> printUlf = System.out::println;
 
         System.out.println("----------------------");
     }
