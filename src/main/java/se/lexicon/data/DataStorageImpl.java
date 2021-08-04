@@ -95,10 +95,7 @@ public class DataStorageImpl implements DataStorage {
                 peopleFound.add(person);
             }
         }
-        for(Person person : peopleFound){
-            person.getFirstName()
-        }
-        Collections.sort(peopleFound);
+
        return peopleFound;
     }
 
@@ -110,10 +107,7 @@ public class DataStorageImpl implements DataStorage {
                 peopleFound.add(person);
             }
         }
-        for(Person person : peopleFound){
-            person.getFirstName().compareTo(++person.getFirstName())
-        }
-        Collections.sort(peopleFound);
+
        return null;
     }
 }
