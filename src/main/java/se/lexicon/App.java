@@ -13,8 +13,8 @@ public class App {
         SCANNER = new Scanner(System.in);
     }
 
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) {
+
         boolean done = false;
         String message = "Running exercise...";
         do{

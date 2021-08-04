@@ -120,7 +120,7 @@ public class Exercises {
     }
 
     /*
-        12.	Using findAndSort() find everyone born before 1950 sorted reversed by lastest to earliest.
+        12.	Using findAndSort() find everyone born before 1950 sorted reversed by latest to earliest.
      */
     public static void exercise12(String message){
         System.out.println(message);
